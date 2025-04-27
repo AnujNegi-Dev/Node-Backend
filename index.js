@@ -1,24 +1,62 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const port = 4000
+const colorData = [
+	{
+      color: "red",
+      value: "#f00"
+    },
+    {
+      color: "green",
+      value: "#0f0"
+    },
+    {
+      color: "blue",
+      value: "#00f"
+    },
+    {
+      color: "cyan",
+      value: "#0ff"
+    },
+    {
+      color: "magenta",
+      value: "#f0f"
+    },
+    {
+      color: "yellow",
+      value: "#ff0"
+    },
+    {
+      color: "black",
+      value: "#000"
+    }
+  ]
+
+  app.get('/youtube', (req, res) => {
+    res.send(colorData)
+  })
+
 
 app.get('/', (req, res) => {
   res.send('Hello World ----!')
 })
 
-app.get('/twitter',(req,res)=>{
+app.get('/twitter', (req, res) => {
   res.send('This is the response')
 })
 
-app.get('/login',(req,res)=>{
-    res.send("<h1>Please Login</h1>")
+app.get('/login', (req, res) => {
+  res.send("<h1>Please Login</h1>")
 })
 
-app.get('/youtube',(req,res)=>{
-    res.send("<p>This is the youtube url</p>")
+
+
+
+app.get('/github', (req, res) => {
+  res.send('<h1>This is the data for the github page</h1>')
 })
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`)
 })
+
