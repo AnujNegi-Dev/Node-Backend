@@ -32,10 +32,6 @@ const colorData = [
     }
   ]
 
-  app.get('/youtube', (req, res) => {
-    res.send(colorData)
-  })
-
 
 app.get('/', (req, res) => {
   res.send('Hello World ----!')
@@ -49,11 +45,8 @@ app.get('/login', (req, res) => {
   res.send("<h1>Please Login</h1>")
 })
 
-
-
-
 app.get('/github', (req, res) => {
-  res.send('<h1>This is the data for the github page</h1>')
+  res.send(colorData)
 })
 
 app.listen(process.env.PORT, () => {
